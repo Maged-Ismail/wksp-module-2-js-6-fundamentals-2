@@ -11,12 +11,29 @@ let verifyEquals = require('../../assets/verify-equals');
 //    - Use the toUpperCase string method
 
 function f(str) {
+  if (typeof str !== 'string'){
+    return undefined;
+}
+else if (str === ''){
+    return str;
+}
+else {
+  let lower = str.toLowerCase();
+  let words = lower.split(' ');
+  let newWord = '';
+  let newStr = '';
 
+  for (let i =0; i<words.length; i++){
+    newWord = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+    newStr += newWord + ' ';
+  }
+  return newStr;
+}
 }
 
 // Test cases
-let inputs = [];
-let outputs = [];
+let inputs = ['hello world', 'ALL YOUR BASE ARE BELONG', 46, '', []];
+let outputs = ['Hello World ', 'All Your Base Are Belong ', undefined, '', undefined];
 
 // STOP -----------------------------------------------------------------
 // No code changes below. This is the actual test that will run your test cases and validate your function.
