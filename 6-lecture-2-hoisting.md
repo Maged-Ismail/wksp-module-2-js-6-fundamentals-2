@@ -22,7 +22,7 @@ console.log(greeting);
 var greeting = 'Hello';
 
 // a. 'Hello'
-// b. undefined
+// b. undefined <-- greeting is declared first but assigned a value later
 // c. Uncaught ReferenceError: greeting is not defined
 ```
 
@@ -39,7 +39,7 @@ const anotherGreeting = 'Good evening';
 
 // a. 'Good evening'
 // b. undefined
-// c. ReferenceError: can't access lexical declaration `anotherGreeting' before initialization
+// c. ReferenceError: can't access lexical declaration `anotherGreeting' before initialization <-- No hoisting for const
 ```
 
 ---
@@ -51,7 +51,7 @@ let yetAnotherGreeting = 'Goodnight';
 
 // a. 'Good evening'
 // b. undefined
-// c. ReferenceError: can't access lexical declaration `anotherGreeting' before initialization
+// c. ReferenceError: can't access lexical declaration `anotherGreeting' before initialization <-- No hoisting for let
 ```
 
 ---

@@ -8,15 +8,21 @@ let verifyEquals = require('../../assets/verify-equals');
 // - If one of the numbers is not passed, or if anything other than numbers are passed, return undefined.
 
 function f(input) {
-    
+    if (input.length !== 2 || typeof input[0] !== 'number' || typeof input[1] !== 'number') {
+        return undefined;
+    }
+    else {
+        const arr = input[0] * input[1];
+        return arr;
+    }
 }
 
 // Step 2
 // We need 5 test cases. The first input is provided.
 // Don't forget to test all of the question parameters
 
-let inputs = [[2, 7]];
-let outputs = [14];
+let inputs = [[2, 7], 'hello', [4, 4], [6, 'k'], [8, 0]];
+let outputs = [14, undefined, 16, undefined, 0];
 
 // Step 3
 // Run this file in the debugger.

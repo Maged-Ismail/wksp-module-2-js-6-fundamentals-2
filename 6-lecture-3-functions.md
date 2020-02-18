@@ -19,6 +19,12 @@ is a variable in function, or method, definition.
 ```js
 // Example
 
+function greeting(name){  //parameter is 'name'
+    return `${name}! Want some bacon?`;
+}
+
+greeting('daniel');
+
 ```
 
 ---
@@ -90,9 +96,12 @@ This will _define_ a function expression.
 The third way is an arrow function
 
 ```js
-someFunc = () => {
+someFunc = (x, y) => {
     // do something...
 }
+
+names.map((name) => `Hi ${name}`);
+
 ```
 
 This is equivalent to the previous way of _defining_ a function. 

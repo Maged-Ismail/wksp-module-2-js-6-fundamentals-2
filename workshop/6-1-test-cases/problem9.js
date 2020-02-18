@@ -13,12 +13,37 @@ let verifyEquals = require('../../assets/verify-equals');
 //    - A for loop might be helpful
 
 function f(str) {
+    if (typeof str !== 'string'){
+        return undefined;
+    }
+    else if (str === ''){
+        return str;
+    }
+    else {
+        let words = str.split(' ');
+        let longestWord = '';
 
+        for (let i=0; i<words.length; i++){
+            let j=i+1
+            let firstWord = words[i];
+            let nextWord = words[j];
+            if (nextWord === undefined){
+                return longestWord;
+            }
+            else if (firstWord.length > nextWord.length){
+                longestWord = firstWord;
+            }
+            else {
+                longestWord = nextWord;
+            }
+        }
+        return longestWord;
+    }
 }
 
 // Test cases
-let inputs = [];
-let outputs = [];
+let inputs = ['Hello Everyone', '', 46, 'Is that it', 'last runned test'];
+let outputs = ['Everyone', '', undefined, 'that', 'runned'];
 
 // STOP -----------------------------------------------------------------
 // No code changes below. This is the actual test that will run your test cases and validate your function.
